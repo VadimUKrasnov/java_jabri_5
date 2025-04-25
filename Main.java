@@ -100,6 +100,7 @@ public class Main {
                 {7, 8, 9}
         };
         maxElement(myMatrix);
+        System.out.println();
 
         // 4.
         int[][] anyMatrix = {
@@ -324,6 +325,8 @@ public class Main {
                 }
             }
         }
+        System.out.printf("Максимальное значение: " + max + " (%s, %s)", maxRow, maxCol);
+        System.out.println();
         return new int[]{max, maxRow, maxCol};
     }
 
