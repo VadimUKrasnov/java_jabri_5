@@ -52,12 +52,12 @@ public class Main {
         printArr(arr);
 
         // 2.
-        int[] arr1 = {2, 4, 6, 8, 11};
-        System.out.println(sumArr(arr1));
+        int[] array = {2, 4, 6, 8, 11};
+        System.out.println(sumArr(array));
 
         // 3.
-        int[] arr2 = {3, 5, 1, 8, 2};
-        int minValue = minElement(arr2);
+        int[] minArr = {3, 5, 1, 8, 2};
+        int minValue = minElement(minArr);
         System.out.println("Минимальный элемент массива: " + minValue);
 
         // 4.
@@ -69,11 +69,9 @@ public class Main {
 
         //5.
         int[] myArray = {1, 2, 3, 4, 5};
-        System.out.println("Исходный массив:");
-        printArray(myArray);
-        invertArray(myArray);
         System.out.println("Инвертированный массив:");
-        printArray(myArray);
+        invertArray(myArray);
+
 
         // 6.
         int[] myArray1 = {1, 2, 3, 4, 5};
@@ -84,7 +82,7 @@ public class Main {
         // 7.
         int[] numbersForReplace = {-3, 0, -7, -10, 5, -8};
         replaceNegativesWithAbsolute(numbersForReplace);
-
+ 
         // Многомерные массивы
         // 1.
         arrDiagonal();
@@ -210,20 +208,20 @@ public class Main {
     }
 
     // 2. Напишите метод, который принимает массив целых чисел и возвращает сумму всех его элементов.
-    static int sumArr(int[] arr1) {
+    static int sumArr(int[] array) {
         int sum = 0;
-        for (int i = 0; i < arr1.length; i++) {
-            sum += arr1[i];
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
         }
         return (sum);
     }
 
     // 3. Реализуйте метод для поиска минимального элемента в одномерном массиве
-    public static int minElement(int[] arr2) {
-        int min = arr2[0];
-        for (int i = 1; i < arr2.length; i++) {
-            if (arr2[i] < min) {
-                min = arr2[i];
+    public static int minElement(int[] array) {
+        int min = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
             }
         }
         return min;
@@ -247,13 +245,7 @@ public class Main {
             array[i] = array[length - 1 - i];
             array[length - 1 - i] = temp;
         }
-    }
-
-    public static void printArray(int[] array) {
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
+        printArr(array);
     }
 
     // 6. Напишите метод, который проверяет, есть ли в массиве повторяющиеся элементы
@@ -275,10 +267,7 @@ public class Main {
                 array[i] = -array[i];
             }
         }
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
+        printArr(array);
     }
 
     // Многомерные массивы.
@@ -286,9 +275,7 @@ public class Main {
     public static int[][] arrDiagonal() {
         int[][] arr = new int[3][3];
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = (i == j) ? 1 : 0;
-            }
+            arr[i][i] = 1;
         }
         for (int[] row : arr) {
             for (int element : row) {

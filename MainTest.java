@@ -128,10 +128,4 @@ public class MainTest {
                 "0 1 0 1 0";
         assertEquals(expectedOutput.trim(), result.trim());
     }
-
-
-
-
-
-
 }
